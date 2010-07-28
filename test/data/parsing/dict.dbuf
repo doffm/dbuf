@@ -1,0 +1,16 @@
+
+namespace org.dbuf.test.Dict {
+
+        struct ValueStruct {
+                byte one;
+                boolean two;
+        }
+
+        struct DictStruct {
+                dict <byte, byte> one;
+                dict <boolean, boolean> two;
+                dict <int16, int16> three;
+                dict <int32, int32> four;
+                dict <uint32, ValueStruct> five;
+        }
+}

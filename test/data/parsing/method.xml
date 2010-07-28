@@ -1,0 +1,69 @@
+<idl>
+        <namespace name="org.dbuf.test">
+                <error name="ErrorOne">
+                        <member name="etype">
+                                <basic type="uint16"/>
+                        </member>
+                </error>
+                <error name="ErrorTwo">
+                        <member name="etype">
+                                <basic type="uint16"/>
+                        </member>
+                        <member name="omessage">
+                                <basic type="string"/>
+                        </member>
+                </error>
+        </namespace>
+        <interface name="org.dbuf.test.Method">
+                <method name="BlankReply">
+                        <in>
+                                <member name="one">
+                                        <basic type="byte"/>
+                                </member>
+                                <member name="two">
+                                        <basic type="byte"/>
+                                </member>
+                        </in>
+                </method>
+                <method name="BlankError">
+                        <in>
+                                <member name="one">
+                                        <basic type="byte"/>
+                                </member>
+                                <member name="two">
+                                        <basic type="byte"/>
+                                </member>
+                        </in>
+                        <out>
+                                <member name="one">
+                                        <basic type="byte"/>
+                                </member>
+                                <member name="two">
+                                        <basic type="byte"/>
+                                </member>
+                        </out>
+                </method>
+                <method name="FullMethod">
+                        <in>
+                                <member name="one">
+                                        <basic type="byte"/>
+                                </member>
+                                <member name="two">
+                                        <basic type="byte"/>
+                                </member>
+                        </in>
+                        <out>
+                                <member name="one">
+                                        <basic type="byte"/>
+                                </member>
+                                <member name="two">
+                                        <basic type="byte"/>
+                                </member>
+                        </out>
+                        <throws>
+                                <error name="org.dbuf.test.ErrorOne"/>
+                                <error name="org.dbuf.test.ErrorTwo"/>
+                        </throws>
+                </method>
+        </interface>
+</idl>

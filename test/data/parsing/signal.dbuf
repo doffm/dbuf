@@ -1,0 +1,12 @@
+
+interface org.dbuf.test.Signal {
+        signal ASig {
+                byte abyte;
+                variant whoKnows;
+        }
+
+        signal ANother {
+                uint16 A16er;
+                object isThisAString;
+        };
+}

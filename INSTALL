@@ -1,0 +1,26 @@
+
+The dbuf parser and output generator is based on the antlr3 library.
+The antlr3 java runtime is included with this source package.
+
+Requirements:
+
+        - Python stringtemplate runtime (>=3.2)
+        - Python antlr runtime (=3.1.2)
+
+        The stringtemplate and antlr runtimes may be obtained from:
+
+                http://www.stringtemplate.org/download/PyStringTemplate-3.2b1.tar.gz
+                http://www.antlr.org/download/Python/antlr_python_runtime-3.1.2.tar.gz
+
+Install:
+
+        > python setup.py build
+        > python setup.py install
+
+        To install to a non-standard directory:
+
+                > python setup.py install --prefix=(~/.local)
+
+Tests:
+
+        > python setup.py check

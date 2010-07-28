@@ -1,0 +1,8 @@
+<idl>
+        <namespace name="org">
+                <namespace name="foo">
+                </namespace>
+        </namespace>
+        <namespace name="org.foo">
+        </namespace>
+</idl>

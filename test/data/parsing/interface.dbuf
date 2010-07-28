@@ -1,0 +1,9 @@
+
+interface org.test.Toplevel {
+
+}
+
+namespace org.test {
+        interface Nested {
+        }
+}

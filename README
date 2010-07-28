@@ -1,0 +1,8 @@
+
+dbuf is a language for describing and documenting D-Bus message formats.
+
+A tutorial and a document describing the current functionality can be found
+in the 'doc' folder of this source tree.
+
+The source repository can be found at:
+

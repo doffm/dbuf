@@ -1,0 +1,21 @@
+
+namespace org.dbuf.test {
+        interface Error {
+                struct ErrorS {
+                        uint16 etype;
+                        string omessage;
+                }
+
+                error AnError {
+                        string SomeErrorMessage;
+                        string additionalMessage;
+                        ErrorS perhapsAnEnum;
+                }
+
+                error ANother {
+                        int detail;
+                        int detail2;
+                        variant anythingGoes;
+                };
+        }
+}

@@ -1,0 +1,88 @@
+<idl>
+        <namespace name="org.dbuf.test.Struct">
+                <struct name="BasicTypes">
+                        <member name="aByte">
+                                <basic type="byte"/>
+                        </member>
+                        <member name="aBoolean">
+                                <basic type="boolean"/>
+                        </member>
+                        <member name="anInt16">
+                                <basic type="int16"/>
+                        </member>
+                        <member name="aUInt16">
+                                <basic type="uint16"/>
+                        </member>
+                        <member name="anInt32">
+                                <basic type="int32"/>
+                        </member>
+                        <member name="aUInt32">
+                                <basic type="uint32"/>
+                        </member>
+                        <member name="anInt64">
+                                <basic type="int64"/>
+                        </member>
+                        <member name="aUInt64">
+                                <basic type="uint64"/>
+                        </member>
+                        <member name="aDouble">
+                                <basic type="double"/>
+                        </member>
+                        <member name="aString">
+                                <basic type="string"/>
+                        </member>
+                        <member name="anObject">
+                                <basic type="object"/>
+                        </member>
+                        <member name="aSignature">
+                                <basic type="signature"/>
+                        </member>
+                        <member name="aVariant">
+                                <basic type="variant"/>
+                        </member>
+                </struct>
+                <struct name="CompoundTypes">
+                        <member name="bType">
+                                <compound name="BasicTypes"/>
+                        </member>
+                        <member name="aVariant">
+                                <basic type="variant"/>
+                        </member>
+                </struct>
+                <struct name="ArrayTypes">
+                        <member name="aByte">
+                                <array>
+                                        <array>
+                                                <array>
+                                                        <array>
+                                                                <array>
+                                                                        <basic type="byte"/>
+                                                                </array>
+                                                        </array>
+                                                </array>
+                                        </array>
+                                </array>
+                        </member>
+                        <member name="bByte">
+                                <array>
+                                        <array>
+                                                <basic type="byte"/>
+                                        </array>
+                                </array>
+                        </member>
+                        <member name="bTypeArr">
+                                <array>
+                                        <array>
+                                                <array>
+                                                        <array>
+                                                                <array>
+                                                                        <compound name="BasicTypes"/>
+                                                                </array>
+                                                        </array>
+                                                </array>
+                                        </array>
+                                </array>
+                        </member>
+                </struct>
+        </namespace>
+</idl>

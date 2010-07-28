@@ -1,0 +1,108 @@
+
+/* Test the use of a type within the same namespace. */
+namespace org.test.dbuf.same {
+        enum <uint32> Foo {
+                ONE,
+        }
+
+        struct Bar {
+                Foo foo;
+        }
+}
+
+/* Test the use of a type within a sub namespace. */
+namespace org.test.dbuf.sub {
+        namespace sub {
+                enum <int32> Foo {
+                        ONE,
+                }
+        }
+
+        struct Bar {
+                sub.Foo foo;
+        }
+}
+
+/* Test the use of a type within an ancestor namespace. */
+namespace org.test.dbuf.us.ancestor {
+        enum <uint16> Foo {
+                ONE,
+        }
+
+        namespace sub {
+                using org.test.dbuf.us.ancestor;
+
+                struct Bar {
+                        Foo foo;
+                }
+        }
+}
+
+/* Test the use of a type within a separate namespace. */
+namespace org.test.dbuf.us.separate {
+        namespace a {
+                enum <int16> Foo {
+                        ONE,
+                }
+        }
+
+        namespace b {
+                using org.test.dbuf.us.separate.a;
+
+                struct Bar {
+                        Foo foo;
+                }
+        }
+}
+
+/* Test the use of a type within an ancestor namespace with 'alias'. */
+namespace org.test.dbuf.al.ancestor {
+        enum <uint64> Foo {
+                ONE,
+        }
+
+        namespace sub {
+                using ancestor = org.test.dbuf.al.ancestor;
+
+                struct Bar {
+                        ancestor.Foo foo;
+                }
+        }
+}
+
+/* Test the use of a type within a separate namespace with 'alias'. */
+namespace org.test.dbuf.al.separate {
+        namespace a {
+                enum <int64> Foo {
+                        ONE,
+                }
+        }
+
+        namespace b {
+                using separate = org.test.dbuf.al.separate.a;
+
+                struct Bar {
+                        separate.Foo foo;
+                }
+        }
+}
+
+/* TODO Test the use of alias to refer to a type. */
+
+/* Test the use of types using their fully-qualified name. */
+namespace org.test.dbuf.fqn {
+        namespace a.b.c.d {
+                enum <byte> Foo {
+                        ONE,
+                }
+        }
+
+        namespace b {
+                struct Bar {
+                        org.test.dbuf.fqn.a.b.c.d.Foo foo;
+                }
+        }
+}
+
+/* TODO Test that a conflicting fully qualified name symbol and current namespace symbol. */
+

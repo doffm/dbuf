@@ -1,0 +1,35 @@
+namespace org.dbuf.test {
+        error ErrorOne {
+                uint16 etype;
+        }
+
+        error ErrorTwo {
+                uint16 etype;
+                string omessage;
+        }
+}
+
+interface org.dbuf.test.Method {
+        method BlankReply {
+                byte one;
+                byte two;
+        };
+
+        method BlankError {
+                byte one;
+                byte two;
+        } reply {
+                byte one;
+                byte two;
+        }
+
+        method FullMethod {
+                byte one;
+                byte two;
+        }
+        reply {
+                byte one;
+                byte two;
+        } throws (org.dbuf.test.ErrorOne,
+                  org.dbuf.test.ErrorTwo);
+}

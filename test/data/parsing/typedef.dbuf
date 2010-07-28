@@ -1,0 +1,24 @@
+
+namespace org.dbuf.test.Typedef {
+
+        struct AStruct {
+                byte one;
+                string two;
+        }
+
+        enum <byte> AnEnum {
+                ONE,
+                TWO,
+                THREE
+        }
+}
+
+interface org.dbuf.test.TestTypedef {
+
+        typedef org.dbuf.test.Typedef.AStruct AStruct;
+        typedef org.dbuf.test.Typedef.AnEnum AnEnum;
+        typedef int32 Baz;
+        typedef int16[] Foo;
+        typedef int16[][][][] Foz;
+        typedef dict <int16, AnEnum> Bar;
+}

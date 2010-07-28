@@ -1,0 +1,31 @@
+using Role = org.freestandards.atspi.Accessible.Role;
+using Reference = org.freestandards.atspi.Reference;
+
+interface org.freestandards.atspi.Cache {
+
+        /* A Bit field representing all the states of the accessible. */
+        typedef uint64 StateSet;
+
+        struct CacheItem {
+                object      path;
+                Reference   parent;
+                Reference[] children;
+                string[]    interfaces;
+                string      name;
+                Role        role;
+                string      description;
+                StateSet    states;
+        }
+
+        method GetItems reply {
+                CacheItem[] items;
+        }
+
+        signal AddAccessible {
+                CacheItem item;
+        }
+
+        signal RemoveAccessible {
+                Reference item;
+        }
+}

@@ -1,0 +1,724 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+         "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/">
+        <interface name="org.freestandards.atspi.Event.Mouse">
+                <signal name="Abs">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Rel">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Button">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Table">
+                <property name="NRows" type="i" access="read"/>
+                <property name="NColumns" type="i" access="read"/>
+                <property name="caption" type="(so)" access="read"/>
+                <property name="summary" type="(so)" access="read"/>
+                <property name="NSelectedRows" type="i" access="read"/>
+                <property name="NSelectedColumns" type="i" access="read"/>
+                <method name="GetAccessibleAt">
+                        <arg name="row" type="i" direction="in"/>
+                        <arg name="column" type="i" direction="in"/>
+                        <arg name="cell" type="(so)" direction="out"/>
+                </method>
+                <method name="GetIndexAt">
+                        <arg name="row" type="i" direction="in"/>
+                        <arg name="column" type="i" direction="in"/>
+                        <arg name="index" type="i" direction="out"/>
+                </method>
+                <method name="GetRowAtIndex">
+                        <arg name="index" type="i" direction="in"/>
+                        <arg name="row" type="i" direction="out"/>
+                </method>
+                <method name="GetColumnAtIndex">
+                        <arg name="index" type="i" direction="in"/>
+                        <arg name="column" type="i" direction="out"/>
+                </method>
+                <method name="GetRowDescription">
+                        <arg name="row" type="i" direction="in"/>
+                        <arg name="description" type="s" direction="out"/>
+                </method>
+                <method name="GetColumnDescription">
+                        <arg name="column" type="i" direction="in"/>
+                        <arg name="description" type="s" direction="out"/>
+                </method>
+                <method name="GetColumnExtentAt">
+                        <arg name="row" type="i" direction="in"/>
+                        <arg name="column" type="i" direction="in"/>
+                        <arg name="column_span" type="i" direction="out"/>
+                </method>
+                <method name="GetRowHeader">
+                        <arg name="row" type="i" direction="in"/>
+                        <arg name="header" type="(so)" direction="out"/>
+                </method>
+                <method name="GetColumnHeader">
+                        <arg name="column" type="i" direction="in"/>
+                        <arg name="header" type="(so)" direction="out"/>
+                </method>
+                <method name="GetSelectedRows">
+                        <arg name="indicies" type="ai" direction="out"/>
+                </method>
+                <method name="GetSelectedColumns">
+                        <arg name="indicies" type="ai" direction="out"/>
+                </method>
+                <method name="IsRowSelected">
+                        <arg name="row" type="i" direction="in"/>
+                        <arg name="selected" type="b" direction="out"/>
+                </method>
+                <method name="IsColumnSelected">
+                        <arg name="column" type="i" direction="in"/>
+                        <arg name="selected" type="b" direction="out"/>
+                </method>
+                <method name="IsSelected">
+                        <arg name="row" type="i" direction="in"/>
+                        <arg name="column" type="i" direction="in"/>
+                        <arg name="selected" type="b" direction="out"/>
+                </method>
+                <method name="AddRowSelection">
+                        <arg name="row" type="i" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="AddColumnSelection">
+                        <arg name="column" type="i" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="RemoveRowSelection">
+                        <arg name="row" type="i" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="RemoveColumnSelection">
+                        <arg name="column" type="i" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="GetRowColumnExtentsAtIndex">
+                        <arg name="index" type="i" direction="in"/>
+                        <arg name="valid" type="b" direction="out"/>
+                        <arg name="row" type="i" direction="out"/>
+                        <arg name="column" type="i" direction="out"/>
+                        <arg name="row_span" type="i" direction="out"/>
+                        <arg name="column_span" type="i" direction="out"/>
+                        <arg name="selected" type="b" direction="out"/>
+                </method>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Cache">
+                <method name="GetItems">
+                        <arg name="items" type="a(o(so)a(so)assust)" direction="out"/>
+                </method>
+                <signal name="AddAccessible">
+                        <arg name="item" type="(o(so)a(so)assust)"/>
+                </signal>
+                <signal name="RemoveAccessible">
+                        <arg name="item" type="(so)"/>
+                </signal>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Event.Focus">
+                <signal name="Focus">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Accessible">
+                <property name="Name" type="s" access="read"/>
+                <property name="Description" type="s" access="read"/>
+                <property name="Parent" type="(so)" access="read"/>
+                <property name="ChildCount" type="i" access="read"/>
+                <method name="GetChildAtIndex">
+                        <arg name="index" type="i" direction="in"/>
+                        <arg name="child" type="(so)" direction="out"/>
+                </method>
+                <method name="GetIndexInParent">
+                        <arg name="index" type="i" direction="out"/>
+                </method>
+                <method name="GetRelationSet">
+                        <arg name="relations" type="a(ua(so))" direction="out"/>
+                </method>
+                <method name="GetRole">
+                        <arg name="role" type="u" direction="out"/>
+                </method>
+                <method name="GetRoleName">
+                        <arg name="role" type="s" direction="out"/>
+                </method>
+                <method name="GetLocalizedRoleName">
+                        <arg name="role" type="s" direction="in"/>
+                </method>
+                <method name="GetState">
+                        <arg name="state" type="au" direction="out"/>
+                </method>
+                <method name="GetAttributes">
+                        <arg name="attributes" type="a{ss}" direction="out"/>
+                </method>
+                <method name="GetApplication">
+                        <arg name="application" type="(so)" direction="out"/>
+                </method>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Application">
+                <property name="ToolkitName" type="s" access="read"/>
+                <property name="Version" type="s" access="read"/>
+                <method name="GetLocale">
+                        <arg name="locale_type" type="u" direction="in"/>
+                        <arg name="locale" type="s" direction="out"/>
+                </method>
+        </interface>
+
+        <interface name="org.freestandards.atspi.DeviceEventController">
+                <method name="RegisterKeystrokeListener">
+                        <arg name="listener" type="o" direction="in"/>
+                        <arg name="keys" type="a(iisi)" direction="in"/>
+                        <arg name="mask" type="u" direction="in"/>
+                        <arg name="event_type" type="au" direction="in"/>
+                        <arg name="mode" type="(bbb)" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="DeregisterKeystrokeListener">
+                        <arg name="listener" type="o" direction="in"/>
+                        <arg name="keys" type="a(iisi)" direction="in"/>
+                        <arg name="mask" type="u" direction="in"/>
+                        <arg name="event_type" type="au" direction="in"/>
+                </method>
+                <method name="RegisterDeviceEventListener">
+                        <arg name="listener" type="o" direction="in"/>
+                        <arg name="event_type" type="au" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="DeregisterDeviceEventListener">
+                        <arg name="listener" type="o" direction="in"/>
+                        <arg name="event_type" type="au" direction="in"/>
+                </method>
+                <method name="NotifyListenersSync">
+                        <arg name="event" type="(uinuisb)" direction="in"/>
+                        <arg name="consumed" type="b" direction="out"/>
+                </method>
+                <method name="NotifyListenersAsync">
+                        <arg name="event" type="(uinuisb)" direction="in"/>
+                </method>
+                <method name="GenerateKeyboardEvent">
+                        <arg name="keycode" type="i" direction="in"/>
+                        <arg name="keystring" type="s" direction="in"/>
+                        <arg name="event_type" type="u" direction="in"/>
+                </method>
+                <method name="GenerateMouseEvent">
+                        <arg name="x" type="i" direction="in"/>
+                        <arg name="y" type="i" direction="in"/>
+                        <arg name="event_name" type="s" direction="in"/>
+                </method>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Socket">
+                <method name="Embed">
+                        <arg name="plug" type="(so)" direction="in"/>
+                        <arg name="socket" type="(so)" direction="out"/>
+                </method>
+                <method name="Unembed">
+                        <arg name="plug" type="(so)" direction="in"/>
+                </method>
+                <signal name="Available">
+                        <arg name="socket" type="(so)"/>
+                </signal>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Event.Window">
+                <signal name="PropertyChange">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Minimize">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Maximize">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Restore">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Close">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Create">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Reparent">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="DesktopCreate">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="DesktopDestroy">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Destroy">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Activate">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Deactivate">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Raise">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Lower">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Move">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Resize">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Shade">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Ushade">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Restyle">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Event.Object">
+                <signal name="PropertyChange">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="BoundsChanged">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="LinkSelected">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="StateChanged">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="ChildrenChanged">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="VisibleDataChanged">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="SelectionChanged">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="ModelChanged">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="ActiveDescendantChanged">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="RowInserted">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="RowDeleted">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="RowReordered">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="ColumnInserted">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="ColumnDeleted">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="ColumnReordered">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="TextBoundsChanged">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="TextSelectionChanged">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="TextChanged">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="TextAttributesChanged">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="TextCaretMoved">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="AttributesChanged">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Event.Keyboard">
+                <signal name="Modifiers">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+        </interface>
+
+        <interface name="org.freestandards.atspi.HyperLink">
+                <property name="NAnchors" type="i" access="read"/>
+                <property name="StartIndex" type="i" access="read"/>
+                <property name="EndIndex" type="i" access="read"/>
+                <method name="GetObject">
+                        <arg name="index" type="i" direction="in"/>
+                        <arg name="anchor" type="(so)" direction="out"/>
+                </method>
+                <method name="GetUri">
+                        <arg name="index" type="i" direction="in"/>
+                        <arg name="uri" type="s" direction="out"/>
+                </method>
+                <method name="IsValid">
+                        <arg name="valid" type="b" direction="out"/>
+                </method>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Image">
+                <property name="ImageDescription" type="s" access="read"/>
+                <property name="ImageLocale" type="s" access="read"/>
+                <method name="GetImageExtents">
+                        <arg name="coord_type" type="u" direction="in"/>
+                        <arg name="bounding_box" type="(iiii)" direction="out"/>
+                </method>
+                <method name="GetImagePosition">
+                        <arg name="coord_type" type="u" direction="in"/>
+                        <arg name="x" type="i" direction="out"/>
+                        <arg name="y" type="i" direction="out"/>
+                </method>
+                <method name="GetImageSize">
+                        <arg name="width" type="i" direction="out"/>
+                        <arg name="height" type="i" direction="out"/>
+                </method>
+        </interface>
+
+        <interface name="org.freestandards.atspi.EditableText">
+                <method name="SetTextContents">
+                        <arg name="new_contents" type="s" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="InsertText">
+                        <arg name="position" type="i" direction="in"/>
+                        <arg name="text" type="s" direction="in"/>
+                        <arg name="length" type="i" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="CopyText">
+                        <arg name="start_pos" type="i" direction="in"/>
+                        <arg name="end_pos" type="i" direction="in"/>
+                </method>
+                <method name="CutText">
+                        <arg name="start_pos" type="i" direction="in"/>
+                        <arg name="end_pos" type="i" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="DeleteText">
+                        <arg name="start_pos" type="i" direction="in"/>
+                        <arg name="end_pos" type="i" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="PasteText">
+                        <arg name="position" type="i" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Selection">
+                <property name="NSelectedChildren" type="i" access="read"/>
+                <method name="GetSelectedChild">
+                        <arg name="index" type="i" direction="in"/>
+                        <arg name="child" type="(so)" direction="out"/>
+                </method>
+                <method name="SelectChild">
+                        <arg name="index" type="i" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="DeselectSelectedChild">
+                        <arg name="index" type="i" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="IsChildSelected">
+                        <arg name="index" type="i" direction="in"/>
+                        <arg name="selected" type="b" direction="out"/>
+                </method>
+                <method name="SelectAll">
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="ClearSelection">
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="DeselectChild">
+                        <arg name="index" type="i" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Value">
+                <property name="MinimumValue" type="d" access="read"/>
+                <property name="MaximumValue" type="d" access="read"/>
+                <property name="MinimumIncrement" type="d" access="read"/>
+                <property name="currentValue" type="d" access="read"/>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Collection">
+                <method name="GetMatches">
+                        <arg name="rule" type="(v)" direction="in"/>
+                        <arg name="sort_by" type="u" direction="in"/>
+                        <arg name="count" type="i" direction="in"/>
+                        <arg name="traverse" type="b" direction="in"/>
+                        <arg name="matches" type="a(so)" direction="out"/>
+                </method>
+                <method name="GetMatchesTo">
+                        <arg name="current_object" type="o" direction="in"/>
+                        <arg name="rule" type="(v)" direction="in"/>
+                        <arg name="sort_by" type="u" direction="in"/>
+                        <arg name="trav_type" type="u" direction="in"/>
+                        <arg name="recurse" type="b" direction="in"/>
+                        <arg name="count" type="i" direction="in"/>
+                        <arg name="traverse" type="b" direction="in"/>
+                        <arg name="matches" type="a(so)" direction="out"/>
+                </method>
+                <method name="GetMatchesFrom">
+                        <arg name="current_object" type="o" direction="in"/>
+                        <arg name="rule" type="(v)" direction="in"/>
+                        <arg name="sort_by" type="u" direction="in"/>
+                        <arg name="trav_type" type="u" direction="in"/>
+                        <arg name="count" type="i" direction="in"/>
+                        <arg name="traverse" type="b" direction="in"/>
+                        <arg name="matches" type="a(so)" direction="out"/>
+                </method>
+                <method name="GetActiveDescendent">
+                        <arg name="descendent" type="(so)" direction="out"/>
+                </method>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Document">
+                <method name="GetLocale">
+                        <arg name="locale" type="s" direction="out"/>
+                </method>
+                <method name="GetAttributeValue">
+                        <arg name="key" type="s" direction="in"/>
+                        <arg name="value" type="s" direction="out"/>
+                </method>
+                <method name="GetAttributes">
+                        <arg name="attributes" type="a{ss}" direction="out"/>
+                </method>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Hypertext">
+                <method name="GetNLinks">
+                        <arg name="n_links" type="i" direction="out"/>
+                </method>
+                <method name="GetLink">
+                        <arg name="index" type="i" direction="in"/>
+                        <arg name="hyperlink" type="(so)" direction="out"/>
+                </method>
+                <method name="GetLinkIndex">
+                        <arg name="offset" type="i" direction="in"/>
+                        <arg name="index" type="i" direction="out"/>
+                </method>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Event.Document">
+                <signal name="LoadComplete">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="Reload">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="LoadStopped">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="ContentChanged">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+                <signal name="AttributesChanged">
+                        <arg name="event" type="(siiv(so))"/>
+                </signal>
+        </interface>
+
+        <interface name="org.freestandards.atspi.DeviceEventListener">
+                <method name="NotifyEvent">
+                        <arg name="event" type="(uinuisb)" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Component">
+                <method name="Contains">
+                        <arg name="x" type="i" direction="in"/>
+                        <arg name="y" type="i" direction="in"/>
+                        <arg name="coord_type" type="u" direction="in"/>
+                        <arg name="within" type="b" direction="out"/>
+                </method>
+                <method name="GetAccessibleAtPoint">
+                        <arg name="x" type="i" direction="in"/>
+                        <arg name="y" type="i" direction="in"/>
+                        <arg name="coord_type" type="u" direction="in"/>
+                        <arg name="child" type="(so)" direction="out"/>
+                </method>
+                <method name="GetExtents">
+                        <arg name="cood_type" type="u" direction="in"/>
+                        <arg name="box" type="(iiii)" direction="out"/>
+                </method>
+                <method name="GetPosition">
+                        <arg name="coord_type" type="u" direction="in"/>
+                        <arg name="x" type="i" direction="out"/>
+                        <arg name="y" type="i" direction="out"/>
+                </method>
+                <method name="GetSize">
+                        <arg name="width" type="i" direction="out"/>
+                        <arg name="height" type="i" direction="out"/>
+                </method>
+                <method name="GetLayer">
+                        <arg name="layer" type="u" direction="out"/>
+                </method>
+                <method name="GetMDIZOrder">
+                        <arg name="order" type="n" direction="out"/>
+                </method>
+                <method name="GrabFocus">
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="GetAlpha">
+                        <arg name="alpha" type="d" direction="out"/>
+                </method>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Action">
+                <property name="NActions" type="i" access="read"/>
+                <method name="GetDescription">
+                        <arg name="index" type="i" direction="in"/>
+                        <arg name="description" type="s" direction="out"/>
+                </method>
+                <method name="GetName">
+                        <arg name="index" type="i" direction="in"/>
+                        <arg name="name" type="s" direction="out"/>
+                </method>
+                <method name="GetKeyBinding">
+                        <arg name="index" type="i" direction="in"/>
+                        <arg name="key_binding" type="s" direction="out"/>
+                </method>
+                <method name="GetActions">
+                        <arg name="actions" type="a(sss)" direction="out"/>
+                </method>
+                <method name="GetActions">
+                        <arg name="index" type="i" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+        </interface>
+
+        <interface name="org.freestandards.atspi.Text">
+                <property name="CharacterCount" type="i" access="read"/>
+                <property name="CaretOffset" type="i" access="read"/>
+                <method name="SetCaretOffset">
+                        <arg name="offset" type="i" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="GetTextBeforeOffset">
+                        <arg name="offset" type="i" direction="in"/>
+                        <arg name="boundary_type" type="u" direction="in"/>
+                        <arg name="s" type="s" direction="out"/>
+                        <arg name="start_offset" type="i" direction="out"/>
+                        <arg name="end_offset" type="i" direction="out"/>
+                </method>
+                <method name="GetTextAtOffset">
+                        <arg name="offset" type="i" direction="in"/>
+                        <arg name="boundary_type" type="u" direction="in"/>
+                        <arg name="s" type="s" direction="out"/>
+                        <arg name="start_offset" type="i" direction="out"/>
+                        <arg name="end_offset" type="i" direction="out"/>
+                </method>
+                <method name="GetTextAfterOffset">
+                        <arg name="offset" type="i" direction="in"/>
+                        <arg name="boundary_type" type="u" direction="in"/>
+                        <arg name="s" type="s" direction="out"/>
+                        <arg name="start_offset" type="i" direction="out"/>
+                        <arg name="end_offset" type="i" direction="out"/>
+                </method>
+                <method name="GetCharacterAtOffset">
+                        <arg name="offset" type="i" direction="in"/>
+                        <arg name="c" type="i" direction="out"/>
+                </method>
+                <method name="GetAttributeValue">
+                        <arg name="offset" type="i" direction="in"/>
+                        <arg name="attribute_key" type="s" direction="in"/>
+                        <arg name="attribute_value" type="s" direction="out"/>
+                        <arg name="start_offset" type="i" direction="out"/>
+                        <arg name="end_offset" type="i" direction="out"/>
+                        <arg name="defined" type="b" direction="out"/>
+                </method>
+                <method name="GetAttributes">
+                        <arg name="offset" type="i" direction="in"/>
+                        <arg name="attributes" type="a{ss}" direction="out"/>
+                        <arg name="start_offset" type="i" direction="out"/>
+                        <arg name="end_offset" type="i" direction="out"/>
+                </method>
+                <method name="GetDefaultAttributes">
+                        <arg name="attributes" type="a{ss}" direction="out"/>
+                </method>
+                <method name="GetCharacterExtents">
+                        <arg name="offset" type="i" direction="in"/>
+                        <arg name="coord" type="u" direction="in"/>
+                        <arg name="x" type="i" direction="out"/>
+                        <arg name="y" type="i" direction="out"/>
+                        <arg name="width" type="i" direction="out"/>
+                        <arg name="height" type="i" direction="out"/>
+                </method>
+                <method name="GetOffsetAtPoint">
+                        <arg name="x" type="i" direction="in"/>
+                        <arg name="y" type="i" direction="in"/>
+                        <arg name="coord" type="u" direction="in"/>
+                        <arg name="offset" type="i" direction="out"/>
+                </method>
+                <method name="GetNSelections">
+                        <arg name="n_selections" type="i" direction="out"/>
+                </method>
+                <method name="GetSelection">
+                        <arg name="selection_index" type="i" direction="in"/>
+                        <arg name="start_offset" type="i" direction="out"/>
+                        <arg name="end_offset" type="i" direction="out"/>
+                </method>
+                <method name="AddSelection">
+                        <arg name="start_offset" type="i" direction="in"/>
+                        <arg name="end_offset" type="i" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="RemoveSelection">
+                        <arg name="selection_index" type="i" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="SetSelection">
+                        <arg name="selection_index" type="i" direction="in"/>
+                        <arg name="start_offset" type="i" direction="in"/>
+                        <arg name="end_offset" type="i" direction="in"/>
+                        <arg name="success" type="b" direction="out"/>
+                </method>
+                <method name="GetRangeExtents">
+                        <arg name="start_offset" type="i" direction="in"/>
+                        <arg name="end_offset" type="i" direction="in"/>
+                        <arg name="coord" type="u" direction="in"/>
+                        <arg name="x" type="i" direction="out"/>
+                        <arg name="y" type="i" direction="out"/>
+                        <arg name="width" type="i" direction="out"/>
+                        <arg name="height" type="i" direction="out"/>
+                </method>
+                <method name="GetBoundedRanges">
+                        <arg name="x" type="i" direction="in"/>
+                        <arg name="y" type="i" direction="in"/>
+                        <arg name="width" type="i" direction="in"/>
+                        <arg name="height" type="i" direction="in"/>
+                        <arg name="coord" type="u" direction="in"/>
+                        <arg name="x_clip" type="u" direction="in"/>
+                        <arg name="y_clip" type="u" direction="in"/>
+                        <arg name="ranges" type="a(iiiv)" direction="out"/>
+                </method>
+                <method name="GetAttributeRun">
+                        <arg name="offset" type="i" direction="in"/>
+                        <arg name="include_defaults" type="b" direction="in"/>
+                        <arg name="attributes" type="a{ss}" direction="out"/>
+                        <arg name="start_offset" type="i" direction="out"/>
+                        <arg name="end_offset" type="i" direction="out"/>
+                </method>
+                <method name="GetAttributeSet">
+                        <arg name="attributes" type="a{ss}" direction="out"/>
+                </method>
+        </interface>
+</node>

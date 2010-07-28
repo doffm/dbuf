@@ -1,0 +1,24 @@
+<idl>
+        <namespace name="org.dbuf.test.Comment">
+                <struct name="AStruct">
+                        <member name="WowZer">
+                                <basic type="int16"/>
+                        </member>
+                        <member name="usigg">
+                                <basic type="uint16"/>
+                        </member>
+                </struct>
+                <interface name="AnInterface">
+                        <method name="Whata">
+                                <in>
+                                        <member name="Method">
+                                                <basic type="uint16"/>
+                                        </member>
+                                        <member name="ThisIs">
+                                                <basic type="int32"/>
+                                        </member>
+                                </in>
+                        </method>
+                </interface>
+        </namespace>
+</idl>

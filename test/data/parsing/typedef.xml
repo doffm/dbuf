@@ -1,0 +1,54 @@
+<idl>
+        <namespace name="org.dbuf.test.Typedef">
+                <struct name="AStruct">
+                        <member name="one">
+                                <basic type="byte"/>
+                        </member>
+                        <member name="two">
+                                <basic type="string"/>
+                        </member>
+                </struct>
+                <enum name="AnEnum" type="byte">
+                        <member name="ONE"/>
+                        <member name="TWO"/>
+                        <member name="THREE"/>
+                </enum>
+        </namespace>
+        <interface name="org.dbuf.test.TestTypedef">
+                <typedef name="AStruct">
+                        <compound name="org.dbuf.test.Typedef.AStruct"/>
+                </typedef>
+                <typedef name="AnEnum">
+                        <compound name="org.dbuf.test.Typedef.AnEnum"/>
+                </typedef>
+                <typedef name="Baz">
+                        <basic type="int32"/>
+                </typedef>
+                <typedef name="Foo">
+                        <array>
+                                <basic type="int16"/>
+                        </array>
+                </typedef>
+                <typedef name="Foz">
+                        <array>
+                                <array>
+                                        <array>
+                                                <array>
+                                                        <basic type="int16"/>
+                                                </array>
+                                        </array>
+                                </array>
+                        </array>
+                </typedef>
+                <typedef name="Bar">
+                        <dict>
+                                <key>
+                                        <basic type="int16"/>
+                                </key>
+                                <value>
+                                        <compound name="AnEnum"/>
+                                </value>
+                        </dict>
+                </typedef>
+        </interface>
+</idl>

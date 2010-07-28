@@ -1,0 +1,26 @@
+<idl>
+        <namespace name="org.dbuf.test.prop">
+                <interface name="SomeProperties">
+                        <struct name="AStruct">
+                                <member name="one">
+                                        <basic type="byte"/>
+                                </member>
+                                <member name="two">
+                                        <basic type="int16"/>
+                                </member>
+                        </struct>
+                        <property name="one">
+                                <basic type="byte"/>
+                        </property>
+                        <property name="two" modifier="read">
+                                <basic type="int16"/>
+                        </property>
+                        <property name="three" modifier="write">
+                                <basic type="uint16"/>
+                        </property>
+                        <property name="four" modifier="readwrite">
+                                <compound name="AStruct"/>
+                        </property>
+                </interface>
+        </namespace>
+</idl>

@@ -1,0 +1,36 @@
+<idl>
+        <namespace name="org.dbuf.test">
+                <interface name="Error">
+                        <struct name="ErrorS">
+                                <member name="etype">
+                                        <basic type="uint16"/>
+                                </member>
+                                <member name="omessage">
+                                        <basic type="string"/>
+                                </member>
+                        </struct>
+                        <error name="AnError">
+                                <member name="SomeErrorMessage">
+                                        <basic type="string"/>
+                                </member>
+                                <member name="additionalMessage">
+                                        <basic type="string"/>
+                                </member>
+                                <member name="perhapsAnEnum">
+                                        <compound name="ErrorS"/>
+                                </member>
+                        </error>
+                        <error name="ANother">
+                                <member name="detail">
+                                        <compound name="int"/>
+                                </member>
+                                <member name="detail2">
+                                        <compound name="int"/>
+                                </member>
+                                <member name="anythingGoes">
+                                        <basic type="variant"/>
+                                </member>
+                        </error>
+                </interface>
+        </namespace>
+</idl>

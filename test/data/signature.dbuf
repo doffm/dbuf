@@ -1,0 +1,62 @@
+
+namespace org.dbuf.test.Signature {
+
+        struct BasicTypes {
+                byte aByte;
+                boolean aBoolean;
+                int16 anInt16;
+                uint16 aUInt16;
+                int32 anInt32;
+                uint32 aUInt32;
+                int64 anInt64;
+                uint64 aUInt64;
+                double aDouble;
+                string aString;
+                object anObject;
+                signature aSignature;
+                variant aVariant;
+        }
+
+        struct ArrayTypes {
+                byte aByte;
+                byte[] aByteArray;
+        }
+
+        enum <byte> ByteEnum {
+                ONE,
+        }
+
+        enum <int16> Int16Enum {
+                ONE,
+        }
+
+        enum <int32> Int32Enum {
+                ONE,
+        }
+
+        enum <int64> Int64Enum {
+                ONE,
+        }
+
+        struct SimpleStruct {
+                byte  aByte;
+                int16 anInt;
+        }
+
+        struct CompoundStruct {
+                SimpleStruct simple;
+                SimpleStruct[] simpleArray;
+        }
+
+        struct DictStruct {
+                dict <int16, CompoundStruct> aDict;
+        }
+
+        typedef dict <int16, int16> DictDef;
+
+        typedef CompoundStruct[][] CompoundDef;
+
+        struct UseDefStruct {
+                CompoundDef one;
+        }
+}

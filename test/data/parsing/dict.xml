@@ -1,0 +1,64 @@
+<idl>
+        <namespace name="org.dbuf.test.Dict">
+                <struct name="ValueStruct">
+                        <member name="one">
+                                <basic type="byte"/>
+                        </member>
+                        <member name="two">
+                                <basic type="boolean"/>
+                        </member>
+                </struct>
+                <struct name="DictStruct">
+                        <member name="one">
+                                <dict>
+                                        <key>
+                                                <basic type="byte"/>
+                                        </key>
+                                        <value>
+                                                <basic type="byte"/>
+                                        </value>
+                                </dict>
+                        </member>
+                        <member name="two">
+                                <dict>
+                                        <key>
+                                                <basic type="boolean"/>
+                                        </key>
+                                        <value>
+                                                <basic type="boolean"/>
+                                        </value>
+                                </dict>
+                        </member>
+                        <member name="three">
+                                <dict>
+                                        <key>
+                                                <basic type="int16"/>
+                                        </key>
+                                        <value>
+                                                <basic type="int16"/>
+                                        </value>
+                                </dict>
+                        </member>
+                        <member name="four">
+                                <dict>
+                                        <key>
+                                                <basic type="int32"/>
+                                        </key>
+                                        <value>
+                                                <basic type="int32"/>
+                                        </value>
+                                </dict>
+                        </member>
+                        <member name="five">
+                                <dict>
+                                        <key>
+                                                <basic type="uint32"/>
+                                        </key>
+                                        <value>
+                                                <compound name="ValueStruct"/>
+                                        </value>
+                                </dict>
+                        </member>
+                </struct>
+        </namespace>
+</idl>

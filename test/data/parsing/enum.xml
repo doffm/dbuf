@@ -1,0 +1,44 @@
+<idl>
+        <namespace name="org.dbuf.test.Enum">
+                <enum name="ByteEnum" type="byte">
+                        <member name="ONE"/>
+                </enum>
+                <enum name="Int16Enum" type="int16">
+                        <member name="ONE"/>
+                </enum>
+                <enum name="Int32Enum" type="int32">
+                        <member name="ONE"/>
+                </enum>
+                <enum name="Int64Enum" type="int64">
+                        <member name="ONE"/>
+                </enum>
+                <enum name="AllOrdered" type="uint16">
+                        <member name="ONE"/>
+                        <member name="TWO"/>
+                        <member name="THREE"/>
+                        <member name="FOUR"/>
+                        <member name="FIVE"/>
+                        <member name="SIX"/>
+                        <member name="SEVEN"/>
+                        <member name="EIGHT"/>
+                        <member name="NINE"/>
+                        <member name="TEN"/>
+                </enum>
+                <enum name="TrailingComma" type="uint16">
+                        <member name="COMMA"/>
+                </enum>
+                <enum name="ValueAssignment" type="uint16">
+                        <member name="ONE" constant="1"/>
+                        <member name="TWO" constant="2"/>
+                        <member name="THREE" constant="3"/>
+                        <member name="FOUR" constant="4"/>
+                </enum>
+                <enum name="MixedAssignment" type="uint16">
+                        <member name="ONE"/>
+                        <member name="TWO"/>
+                        <member name="THREE" constant="3"/>
+                        <member name="FOUR"/>
+                        <member name="FIVE" constant="6"/>
+                </enum>
+        </namespace>
+</idl>

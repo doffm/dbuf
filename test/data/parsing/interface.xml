@@ -1,0 +1,8 @@
+<idl>
+        <interface name="org.test.Toplevel">
+        </interface>
+        <namespace name="org.test">
+                <interface name="Nested">
+                </interface>
+        </namespace>
+</idl>

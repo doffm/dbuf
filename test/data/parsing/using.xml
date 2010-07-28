@@ -1,0 +1,12 @@
+<idl>
+        <using name="org.dbuf.test.Declaration"/>
+        <alias name="org.dbuf.test.Alias" id="AnAlias"/>
+        <namespace name="org.dbuf.test.Namespace">
+                <using name="org.dbuf.test.NamespaceDeclaration"/>
+                <alias name="org.dbuf.test.NamespaceAlias" id="ANamespaceAlias"/>
+                <interface name="Interface">
+                        <using name="org.dbuf.test.InterfaceDeclaration"/>
+                        <alias name="org.dbuf.test.InterfaceAlias" id="AnInterfaceAlias"/>
+                </interface>
+        </namespace>
+</idl>

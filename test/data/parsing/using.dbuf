@@ -1,0 +1,13 @@
+
+using org.dbuf.test.Declaration;
+using AnAlias = org.dbuf.test.Alias;
+
+namespace org.dbuf.test.Namespace {
+        using org.dbuf.test.NamespaceDeclaration;
+        using ANamespaceAlias = org.dbuf.test.NamespaceAlias;
+
+        interface Interface {
+                using org.dbuf.test.InterfaceDeclaration;
+                using AnInterfaceAlias = org.dbuf.test.InterfaceAlias;
+        }
+}

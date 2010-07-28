@@ -1,0 +1,27 @@
+#! /usr/bin/python
+
+import sys
+import optparse
+
+import dbuf
+
+def main (argv):
+        usage = "usage: dbuftodbusxml [options] [files]"
+        oparser = optparse.OptionParser ()
+        oparser.add_option ('-i', '--interfaces', dest='interfaces', action='append', default=[],
+                            help='Name of an interface that should be parsed into D-Bus XML. (Default - All found)')
+        (options, filenames) = oparser.parse_args()
+
+        try:
+                print dbuf.output (filenames, options.interfaces).toString ()
+                return 0
+        except dbuf.ParsingError:
+                pass
+        except dbuf.LinkerError as err:
+                print err.message
+        except dbuf.InterfaceNotFoundError as err:
+                print err.message
+        return 1
+
+if __name__ == '__main__':
+        sys.exit (main (sys.argv))

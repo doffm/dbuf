@@ -1,0 +1,27 @@
+
+/* This is a random comment. */
+// This is a single line comment.
+
+namespace org.dbuf.test.Comment {
+        /* This is a
+           multi-line comment
+           within a namespace. */
+
+        struct AStruct /* Really brief */ {
+                int16 WowZer; // What a comment
+                uint16 usigg;
+                /* Another
+                 * multi-line
+                 * comment
+                 */
+        };
+
+
+        interface AnInterface {
+                /* Is this a comment about a method */
+                method Whata {
+                        uint16 Method;
+                        int32 ThisIs;
+                }
+        }
+}

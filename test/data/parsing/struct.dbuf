@@ -1,0 +1,30 @@
+
+namespace org.dbuf.test.Struct {
+
+        struct BasicTypes {
+                byte aByte;
+                boolean aBoolean;
+                int16 anInt16;
+                uint16 aUInt16;
+                int32 anInt32;
+                uint32 aUInt32;
+                int64 anInt64;
+                uint64 aUInt64;
+                double aDouble;
+                string aString;
+                object anObject;
+                signature aSignature;
+                variant aVariant;
+        }
+
+        struct CompoundTypes {
+                BasicTypes bType;
+                variant aVariant;
+        }
+
+        struct ArrayTypes {
+                byte[][][][][] aByte;
+                byte[][] bByte;
+                BasicTypes[][][][][] bTypeArr;
+        }
+}

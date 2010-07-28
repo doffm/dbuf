@@ -1,0 +1,10 @@
+
+namespace org {
+        namespace foo {
+
+        }
+}
+
+namespace org.foo {
+
+}

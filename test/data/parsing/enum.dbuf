@@ -1,0 +1,51 @@
+
+namespace org.dbuf.test.Enum {
+
+        enum <byte> ByteEnum {
+                ONE,
+        }
+
+        enum <int16> Int16Enum {
+                ONE,
+        }
+
+        enum <int32> Int32Enum {
+                ONE,
+        }
+
+        enum <int64> Int64Enum {
+                ONE,
+        }
+
+        enum <uint16> AllOrdered {
+                ONE,
+                TWO,
+                THREE,
+                FOUR,
+                FIVE,
+                SIX,
+                SEVEN,
+                EIGHT,
+                NINE,
+                TEN
+        }
+
+        enum <uint16> TrailingComma {
+                COMMA,
+        }
+
+        enum <uint16> ValueAssignment {
+                ONE = 1,
+                TWO = 2,
+                THREE = 3,
+                FOUR = 4,
+        }
+
+        enum <uint16> MixedAssignment {
+                ONE,
+                TWO,
+                THREE = 3,
+                FOUR,
+                FIVE = 6,
+        }
+}

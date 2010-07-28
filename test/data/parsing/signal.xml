@@ -1,0 +1,20 @@
+<idl>
+        <interface name="org.dbuf.test.Signal">
+                <signal name="ASig">
+                        <member name="abyte">
+                                <basic type="byte"/>
+                        </member>
+                        <member name="whoKnows">
+                                <basic type="variant"/>
+                        </member>
+                </signal>
+                <signal name="ANother">
+                        <member name="A16er">
+                                <basic type="uint16"/>
+                        </member>
+                        <member name="isThisAString">
+                                <basic type="object"/>
+                        </member>
+                </signal>
+        </interface>
+</idl>
